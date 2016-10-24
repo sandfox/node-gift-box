@@ -1,0 +1,24 @@
+{
+  "name": "gift-box",
+  "version": "1.0.0",
+  "description": "dependency injection container for node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sandfox/node-gift-box.git"
+  },
+  "keywords": [
+    "ioc",
+    "dependency-injection",
+    "container"
+  ],
+  "author": "sandfox",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sandfox/node-gift-box/issues"
+  },
+  "homepage": "https://github.com/sandfox/node-gift-box#readme"
+}
