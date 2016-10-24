@@ -17,7 +17,7 @@ _This documenation needs so much adding to it..._
 - ServiceDefinition: a grouping of 
 - Container : Our box that holds definitions of `Service`s and their `ServiceProvider`s and understands the relationships between them
 - Singleton Service : A service that is only instantiated once per container (not the same thing as singleton pattern)
-- Transient Service: A service that is instantiated every single time is required
+- Transient Service: A service that is instantiated every single time it is needed
 
 
 ## Usage / API
@@ -49,9 +49,9 @@ container.addTransient('service', serviceProvider, ['array', 'of', 'named', 'ser
 Adds a definition for the named `service` to the container. Transient services get instantiated each time they are requested in a container. If multiple services depend on a Transient service, each one will get a new instance
 
 
-`service` is the name of the service we are defining
-`serviceProvider` is a function as mentioned in concepts (`ServiceProvider`)
-`['array', 'of', 'named', 'services']` is an array of service names which this service is dependent on.
+- `service` is the name of the service we are defining.
+- `serviceProvider` is a function as mentioned in concepts (`ServiceProvider`). This function will be supplied with one argument, a dependencies object, that is a plain javascript object containing all the requested dependencies.
+- `['array', 'of', 'named', 'services']` is an array of service names which this service is dependent on. This is optional.
 
 The order of adding service definitions to the container does not matter as long as you do not create a circular dependency chain (an `Error` will be thrown if you add a definition that would create such a situation)
 
@@ -62,7 +62,7 @@ container.get('service')
 ```
 
 Gets a service from the container. The container will calculate which dependencies are required to be created so that it can return the requested service. Any singleton services created will be cached internally and re-used.
-This method returns a `Promise` that resolves either the service or a rejection if any service provider errors.
+This method returns a `Promise` that resolves either the service or a rejection if any service provider errors, or if any dependency is missing a service provider
 
 ## Example
 
@@ -97,3 +97,4 @@ Add services creates nodes on an internal dependency graph. When a service is re
 - Better docs or at least better links to stuff that explains the concepts we are using.
 - Add scoped subcontainers
 - lots more tests
+- some pretty diagrams
