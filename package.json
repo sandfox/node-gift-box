@@ -1,6 +1,6 @@
 {
   "name": "gift-box",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "dependency injection container for node",
   "main": "index.js",
   "scripts": {
