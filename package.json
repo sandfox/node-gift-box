@@ -1,10 +1,12 @@
 {
   "name": "gift-box",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "dependency injection container for node",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tap test/*.js",
+    "lint": "eslint lib test",
+    "lint-fix": "eslint --fix lib test"
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,15 @@
   "bugs": {
     "url": "https://github.com/sandfox/node-gift-box/issues"
   },
-  "homepage": "https://github.com/sandfox/node-gift-box#readme"
+  "homepage": "https://github.com/sandfox/node-gift-box#readme",
+  "dependencies": {
+    "graphlib": "^2.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.8.1",
+    "eslint-config-standard": "^6.2.0",
+    "eslint-plugin-promise": "^3.3.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "tap": "^7.1.2"
+  }
 }
