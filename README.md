@@ -1,11 +1,11 @@
-# Magic Box
+# Gift Box
 
 Another dependency injection container for nodejs. Not particuarly fast, good, well designed, or anything else.
 
 ## Installation
 
 ```
-npm install [--save] magic-box
+npm install [--save] gift-box
 ```
 
 ## Concepts
@@ -27,9 +27,9 @@ _This documenation needs so much adding to it..._
 It is preferably to use the factory method `createContainer`
 
 ```
-const container = require('magic-box').createContainer()
+const container = require('gift-box').createContainer()
 // or if you need access to the underlying "class"
-const Container = require('magic-box').Container
+const Container = require('gift-box').Container
 const myContainer = new Container()
 ```
 
@@ -67,7 +67,7 @@ This method returns a `Promise` that resolves either the service or a rejection 
 ## Example
 
 ```
-const container = require('magic-box').createContainer()
+const container = require('gift-box').createContainer()
 
 container.addSingleton('config', function(){
   return {db: process.env['POSTGRES']}
